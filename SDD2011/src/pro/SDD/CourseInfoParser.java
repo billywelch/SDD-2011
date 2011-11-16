@@ -1,5 +1,8 @@
 /*
+<<<<<<< HEAD
  /*
+=======
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
  * CourseInfoParser
  *
  * Version 0.3
@@ -31,6 +34,7 @@ public class CourseInfoParser {
 		// read from site
 		try {
 			// Create a URL for the desired page
+<<<<<<< HEAD
 			URL url = new URL("http://sdd2011.phpfogapp.com/courseinfo.xml");
 
 			BufferedReader bufferedreader = new BufferedReader(new InputStreamReader(url.openStream()));
@@ -53,6 +57,17 @@ public class CourseInfoParser {
 					courseinfo.add(string);
 					
 				}
+=======
+			URL url = new URL("sdd2011.phpfogapp.com/courseinfo.xml");
+
+			BufferedReader bufferedreader = new BufferedReader(new InputStreamReader(url.openStream()));
+			String string;
+
+			while ((string = bufferedreader.readLine()) != null) {
+				// append to arraylist
+				course.add(string);
+				courseinfo.add((string = bufferedreader.readLine()));
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 			}
 
 			bufferedreader.close();

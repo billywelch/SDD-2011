@@ -1,6 +1,10 @@
 /*
  * EventView
+<<<<<<< HEAD
  *
+=======
+ * 
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
  * Version 0.8
  *
  */
@@ -14,10 +18,15 @@ import java.util.ArrayList;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
+<<<<<<< HEAD
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+=======
+import android.content.Intent;
+import android.os.Bundle;
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -40,7 +49,11 @@ public class EventView extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		setDebugTv((TextView) this.findViewById(R.id.events));
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 		try {
 
 			// Create a URL for the desired page
@@ -55,6 +68,7 @@ public class EventView extends ListActivity {
 				eventinfo.add((string = bufferedreader.readLine()));
 			}
 			bufferedreader.close();
+<<<<<<< HEAD
 
 			// EventViewParser eventviewparser = new EventViewParser();
 			// eventviewparser.readFromWebsite();
@@ -80,6 +94,35 @@ public class EventView extends ListActivity {
 							}
 						}
 
+=======
+			
+			//EventViewParser eventviewparser = new EventViewParser();
+			//eventviewparser.readFromWebsite();
+			this.setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, events));
+			//this.setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, eventviewparser.getevent()));
+			//this.setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, eventviewparser.geteventinfo()));
+			this.setSelection(0);
+			
+
+
+			final ListView listview = getListView();
+			listview.setTextFilterEnabled(true);
+
+			
+			listview.setOnItemClickListener(new OnItemClickListener() {
+				// listen for click, pair event and event info (via parser, not present at the moment
+				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+					try {
+						for(int k=0;k<events.size();k++){
+						if (((TextView) view).getText() == events.get(k)) {
+							AlertDialog.Builder adb=new AlertDialog.Builder(EventView.this);
+							adb.setTitle("Event Information");
+							adb.setMessage(eventinfo.get(k));
+							adb.setPositiveButton("Ok", null);
+							adb.show();
+						} 
+				        }
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 					} catch (Exception exception) {
 						exception.printStackTrace();
 					}
@@ -89,6 +132,7 @@ public class EventView extends ListActivity {
 		}
 	}
 
+<<<<<<< HEAD
 	private void refreshEventView() {
 		// TODO Auto-generated method stub
 		
@@ -109,6 +153,8 @@ public class EventView extends ListActivity {
 		return true;
 	}
 	
+=======
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 	public void setDebugTv(TextView debugTv) {
 		this.debugTv = debugTv;
 	}
@@ -117,4 +163,8 @@ public class EventView extends ListActivity {
 		return debugTv;
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a

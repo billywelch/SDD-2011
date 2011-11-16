@@ -11,6 +11,23 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content">
 		<Button
+<<<<<<< HEAD
+=======
+			android:id="@+id/zoomin"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="+"
+			android:onClick="myClickHandler"
+			android:padding="12px" />
+		<Button
+			android:id="@+id/zoomout"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="-"
+			android:onClick="myClickHandler"
+			android:padding="12px" />
+		<Button
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 			android:id="@+id/sat"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -41,11 +58,15 @@
 	</LinearLayout>
 	<com.google.android.maps.MapView
 		android:id="@+id/mapview"
+<<<<<<< HEAD
 		android:layout_weight="1"
+=======
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:clickable="true"
 		android:apiKey="0FKTtN9_fJfad1mWQZh75B4W60UXURYCfNxk0JQ" />
+<<<<<<< HEAD
 	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
@@ -61,4 +82,7 @@
 			android:layout_height="wrap_content"
 			android:text="Find Location" />
 	</LinearLayout>
+=======
+    
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 </LinearLayout>

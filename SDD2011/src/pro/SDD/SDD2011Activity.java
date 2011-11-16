@@ -1,6 +1,11 @@
 /*
  * SDD2011Activity
  *
+<<<<<<< HEAD
+=======
+ * Version 1.0
+ *
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
  */
 
 package pro.SDD;
@@ -26,12 +31,16 @@ import android.widget.TextView;
  * 
  * @author Paul Ferguson
  * 
+<<<<<<< HEAD
  * @version 1.0
  * 
+=======
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
  */
 public class SDD2011Activity extends ListActivity {
 	private TextView debugTv;
 	
+<<<<<<< HEAD
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,14 +48,25 @@ public class SDD2011Activity extends ListActivity {
 		String[] string = new String[] { "Campus Map", "Event Notifications",
 				"Course Info", };
 		
+=======
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		String[] string = new String[] { "Campus Map", "Event Notifications", "Course Info", };
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, string));
 
 		ListView listview = getListView();
 		listview.setTextFilterEnabled(true);
 
 		listview.setOnItemClickListener(new OnItemClickListener() {
+<<<<<<< HEAD
 			public void onItemClick(AdapterView<?> parent, View view, int position,
 					long id) {
+=======
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 				try {
 					if (((TextView) view).getText() == "Campus Map") {
 						startActivity(new Intent(SDD2011Activity.this, CampusMap.class));
@@ -63,4 +83,58 @@ public class SDD2011Activity extends ListActivity {
 			}
 		});
 	}
+<<<<<<< HEAD
+=======
+
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.my_menu, menu);
+		return true;
+	}
+
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+		menu.setHeaderTitle("Sample Context Menu");
+		MenuInflater inflater = this.getMenuInflater();
+		inflater.inflate(R.menu.context_menu, menu);
+	}
+
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		if (item.getItemId() >= 200) {
+			this.appendMenuItemText(item);
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId() == R.id.map) {
+			appendText("\nCampus Map Service");
+		} else if (item.getItemId() == R.id.events) {
+			appendText("\nEvent Notifications");
+		} else if (item.getItemId() == R.id.courses) {
+			appendText("\nCourse Info");
+		} else {
+			this.appendMenuItemText(item);
+		}
+		// should return true if the menu item is handled
+		return true;
+	}
+
+	// Given a string of text append it to the TextView
+	private void appendText(String text) {
+		debugTv.setText(debugTv.getText() + text);
+	}
+
+	// Given a menu item append its title to the TextView
+	private void appendMenuItemText(MenuItem menuItem) {
+		String title = menuItem.getTitle().toString();
+		debugTv.setText(debugTv.getText() + "\n" + title);
+	}
+
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 }

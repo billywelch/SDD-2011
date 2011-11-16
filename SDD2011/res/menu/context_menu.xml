@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 	<item
+<<<<<<< HEAD
 		android:id="@+id/map"
 		android:orderInCategory="1"
 		android:title="Campus Map Service" />
@@ -12,4 +13,21 @@
 		android:id="@+id/courses"
 		android:orderInCategory="3"
 		android:title="Course Info" />
+=======
+		android:title="item 1"
+		android:id="@+id/menu_context_item1" />
+	<item
+		android:title="item 2"
+		android:id="@+id/menu_context_item2" />
+	<item
+		android:title="item 3"
+		android:id="@+id/menu_context_item3" />
+	<item
+		android:title="item 4"
+		android:id="@+id/menu_context_item4" />
+	<item
+		android:title="item 5"
+		android:id="@+id/menu_context_item5" />
+
+>>>>>>> d94100dfb59fd332934e527429c4e3a42d30392a
 </menu>
